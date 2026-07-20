@@ -1,21 +1,23 @@
+import { BRAND } from '../config';
+
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-slate-500 sm:flex-row">
-        <span>
-          © {new Date().getFullYear()} Marca. Todos los derechos reservados.
-        </span>
-        <div className="flex gap-6">
-          <a href="#" className="transition-colors hover:text-slate-900 dark:hover:text-white">
-            Privacidad
-          </a>
-          <a href="#" className="transition-colors hover:text-slate-900 dark:hover:text-white">
-            Términos
-          </a>
-          <a href="#" className="transition-colors hover:text-slate-900 dark:hover:text-white">
-            Contacto
-          </a>
+    <footer className="border-t border-gold/15 bg-ink">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-10 text-center">
+        <div className="flex items-center gap-3">
+          <img src="/images/gold_logo_transparent.png" alt={BRAND.name} className="h-9 w-auto" />
+          <span className="leading-tight">
+            <span className="block font-condensed text-base font-semibold uppercase tracking-wide text-cream">
+              {BRAND.name}
+            </span>
+            <span className="block text-[10px] uppercase tracking-[0.2em] text-gold">
+              {BRAND.tagline}
+            </span>
+          </span>
         </div>
+        <p className="text-xs text-cream/50">
+          © {new Date().getFullYear()} {BRAND.name}. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );

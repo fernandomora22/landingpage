@@ -1,35 +1,32 @@
-const LINKS = [
-  { label: 'Características', href: '#features' },
-  { label: 'Empezar', href: '#cta' },
-];
+import { BRAND } from '../config';
+import WhatsAppButton from './WhatsAppButton';
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-lg font-bold tracking-tight">
-          Marca<span className="text-indigo-600">.</span>
+    <header className="sticky top-0 z-40 border-b border-gold/15 bg-ink/85 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+        <a href="#inicio" className="flex items-center gap-3">
+          <img
+            src="/images/gold_logo_transparent.png"
+            alt={BRAND.name}
+            className="h-10 w-auto"
+          />
+          <span className="leading-tight">
+            <span className="block font-condensed text-lg font-semibold uppercase tracking-wide text-cream">
+              {BRAND.name}
+            </span>
+            <span className="block text-[10px] uppercase tracking-[0.2em] text-gold">
+              {BRAND.tagline}
+            </span>
+          </span>
         </a>
-        <ul className="flex items-center gap-6 text-sm font-medium">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-          <li>
-            <a
-              href="#cta"
-              className="rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-500"
-            >
-              Prueba gratis
-            </a>
-          </li>
-        </ul>
+        <WhatsAppButton
+          message="Hola Casa Morales, quiero cotizar el diseño de mi mobiliario."
+          size="md"
+          className="hidden sm:inline-flex"
+        >
+          Cotizar
+        </WhatsAppButton>
       </nav>
     </header>
   );
